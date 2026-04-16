@@ -94,10 +94,10 @@ flowchart TD
     BIND --> RESET["Clear finding_counts<br/>(reset churn detector)"]
     RESET --> DEV
 
-    style ARCH fill:#fff3c4,stroke:#b8860b,stroke-width:2px
-    style RULE fill:#fff3c4,stroke:#b8860b,stroke-width:2px
-    style BIND fill:#fff3c4,stroke:#b8860b,stroke-width:2px
-    style RESET fill:#fff3c4,stroke:#b8860b,stroke-width:2px
+    style ARCH fill:#333333,stroke:#b8860b,stroke-width:2px
+    style RULE fill:#333333,stroke:#b8860b,stroke-width:2px
+    style BIND fill:#333333,stroke:#b8860b,stroke-width:2px
+    style RESET fill:#333333,stroke:#b8860b,stroke-width:2px
 ```
 
 Two further details round out the loop behavior the diagram sketches. **Nit dampening** — driven by `dampen_new_findings()` — drops any *newly raised* nit-severity finding once the iteration count exceeds `nit_threshold` (default 2), on the principle that late-iteration cosmetic feedback is a near-universal source of churn that rarely reflects real risk. **Developer notes** (`_developer_notes.md`, written by the Developer on iteration 2+) give the Developer a channel to justify pushback to the Reviewer and, later, to the Architect — so the Architect is judging the disagreement from both sides, not just from the Reviewer's paper trail.
